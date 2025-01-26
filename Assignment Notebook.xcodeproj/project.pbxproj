@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DFB567A42D45D1AA00201DAD /* AssignmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB567A32D45D1AA00201DAD /* AssignmentList.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		DFB5674D2D43EE6100201DAD /* Assignment Notebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment Notebook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFB567A32D45D1AA00201DAD /* AssignmentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		DFB567442D43EE6100201DAD = {
 			isa = PBXGroup;
 			children = (
+				DFB567A32D45D1AA00201DAD /* AssignmentList.swift */,
 				DFB5674F2D43EE6100201DAD /* Assignment Notebook */,
 				DFB5674E2D43EE6100201DAD /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFB567A42D45D1AA00201DAD /* AssignmentList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
