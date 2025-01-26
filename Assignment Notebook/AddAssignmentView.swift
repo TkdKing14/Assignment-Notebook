@@ -10,9 +10,11 @@ import SwiftUI
 struct AddAssignmentView: View {
     @Environment(\.presentationMode) var presentationMode
     static let courses = ["History", "Science", "Math", "English"]
+    static let colors = [".Blue", ".Red", ".Green"]
     @ObservedObject var assignmentList: AssignmentList
     @State private var course = ""
     @State private var description = ""
+    @State private var color = ""
     @State private var dueDate = Date()
     var body: some View {
         NavigationView {
@@ -22,6 +24,11 @@ struct AddAssignmentView: View {
                         Text(course)
                     }
                 }
+                Picker("Color", selection: $color) {
+                    ForEach(Self.colors, id: \.self) { color in
+                        Text(color)
+                    }
+                }
                 TextField("Description", text: $description)
                 DatePicker ("Due Date", selection: $dueDate, displayedComponents: .date)
             }
@@ -29,7 +36,7 @@ struct AddAssignmentView: View {
             .navigationBarItems (trailing: Button ("Save") {
                 if course.count > 0 && description.count > 0 {
                     let item = AssignmentItem(id: UUID(), course: course,
-                                        description: description, dueDate: dueDate)
+                                              color: color, description: description, dueDate: dueDate)
                     assignmentList.items.append(item)
                     presentationMode.wrappedValue.dismiss ()
                 }

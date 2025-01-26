@@ -21,10 +21,10 @@ struct ContentView: View {
                         })
                         Spacer()
                         Text(item.dueDate,style: .date)
+                        Text(item.color)
                     }
                     
                 }
-                
                 .onMove(perform: { indices, newOffset in
                     assignmentList.items.move(fromOffsets: indices, toOffset: newOffset)
                 })
@@ -52,6 +52,7 @@ struct ContentView: View {
 struct AssignmentItem: Identifiable, Codable{
     var id = UUID()
     var course = String()
+    var color = String()
     var description = String()
     var dueDate = Date()
     
