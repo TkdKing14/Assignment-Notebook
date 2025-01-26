@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var assignmentList = AssignmentList()
     @State private var showingAddAssignmentView = false
+    @State var selectedColor = Color.blue
     var body: some View {
         NavigationView {
             List {
@@ -21,7 +22,9 @@ struct ContentView: View {
                         })
                         Spacer()
                         Text(item.dueDate,style: .date)
-                        Text(item.color)
+                        Circle()
+                            .frame(width: 25, height: 25)
+                            .foregroundStyle(selectedColor)
                     }
                     
                 }
