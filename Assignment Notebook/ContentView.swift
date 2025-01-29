@@ -19,17 +19,31 @@ struct ContentView: View {
                         VStack {
                             VStack(alignment: .leading, content: {
                                 Text(item.course).font(.headline)
+                                    .foregroundStyle(Color.white)
+                                    .fontWeight(.bold)
                                 Text(item.description)
+                                    .foregroundStyle(Color.primary.opacity(0.7))
                             })
                             .padding(10)
-                            .background(Color.gray)
+                            .background(Color.blue)
+                            .cornerRadius(10)
                         }
-                        .padding(2)
+                        .padding(3)
                         .background(Color.black)
+                        .cornerRadius(10)
                             Spacer()
+                        VStack {
                             Text(item.dueDate,style: .date)
-                            .foregroundColor(Color.gray)
-                            .italic()
+                                .foregroundColor(Color.white)
+                                .padding(10)
+                                .background(Color.blue)
+                                .cornerRadius(10)
+                                .italic()
+                                .fontWeight(.bold)
+                        }
+                        .padding(3)
+                        .background(Color.black)
+                        .cornerRadius(10)
                     }
                 }
                 .onMove(perform: { indices, newOffset in
