@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddAssignmentView: View {
     @Environment(\.presentationMode) var presentationMode
-    static let courses = ["History", "Science", "Math", "English"]
+    static let courses = ["History", "Science", "Math", "English", "Language", "Other"]
     @ObservedObject var assignmentList: AssignmentList
     @State private var course = ""
     @State private var description = ""

@@ -15,16 +15,22 @@ struct ContentView: View {
             List {
                 ForEach(assignmentList.items) { item in
                     HStack {
-                        VStack(alignment: .leading, content: {
-                            Text(item.course).font(.headline)
-                            Text(item.description)
-                        })
-                        Spacer()
-                        Text(item.dueDate,style: .date)
+                        VStack {
+                            VStack(alignment: .leading, content: {
+                                Text(item.course).font(.headline)
+                                Text(item.description)
+                            })
+                            .padding(10)
+                            .background(Color.gray)
+                        }
+                        .padding(2)
+                        .background(Color.black)
+                            Spacer()
+                            Text(item.dueDate,style: .date)
+                            .foregroundColor(Color.gray)
+                            .italic()
                     }
-                    
                 }
-                
                 .onMove(perform: { indices, newOffset in
                     assignmentList.items.move(fromOffsets: indices, toOffset: newOffset)
                 })
